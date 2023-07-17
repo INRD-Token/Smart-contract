@@ -23,21 +23,12 @@ const hardhatConfig: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {},
-    goerliDirect: {
-      url: `https://eth-goerli.g.alchemy.com/v2/${process.env.GOERLI_ALCHEMY_APIKEY}`,
-      accounts: process.env.GOERLI_DEPLOYER_PRIVATE_KEY
-        ? [process.env.GOERLI_DEPLOYER_PRIVATE_KEY]
+    sepoliaDirect: {
+      url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.SEPOLI_ALCHEMY_APIKEY}`,
+      accounts: process.env.SEPOLI_DEPLOYER_PRIVATE_KEY
+        ? [process.env.SEPOLI_DEPLOYER_PRIVATE_KEY]
         : undefined,
-      chainId: 5,
-    },
-    goerliFB: {
-      url: "https://rpc.ankr.com/eth_goerli",
-      fireblocks: {
-        privateKey: process.env.GOERLI_FIREBLOCKS_API_SECRET_PATH_DEPLOYER,
-        apiKey: process.env.GOERLI_FIREBLOCKS_API_KEY_DEPLOYER,
-        vaultAccountIds:
-          process.env.GOERLI_FIREBLOCKS_VAULT_ACCOUNT_ID_DEPLOYER,
-      },
+      chainId: 11155111,
     },
     sepoliaFB: {
       url: `https://rpc2.sepolia.org`,
