@@ -18,7 +18,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract INRDToken is ERC20{
     address public owner;
     
-    constructor(address _owner)ERC20("INRDTest","testing the INRD token"){
+    constructor(address _owner)ERC20("INRD","INRD"){
         owner = _owner;
     }
 
@@ -36,4 +36,5 @@ contract INRDToken is ERC20{
      require(msg.sender==owner);
      return (balanceOf(_user),balanceOf(owner));   
     }
+
 }
